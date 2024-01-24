@@ -1,0 +1,1092 @@
+
+[pc]: 512 | [Hex]: 0x6a12 - 0x6 | [mem]: 0x6a       
+# ! [Result]      : load vx kk, x: 18 kk: 18
+
+[pc]: 514 | [Hex]: 0x6b01 - 0x6 | [mem]: 0x6b       
+# ! [Result]      : load vx kk, x: 1 kk: 1
+
+[pc]: 516 | [Hex]: 0x6110 - 0x6 | [mem]: 0x61       
+# ! [Result]      : load vx kk, x: 16 kk: 16
+
+[pc]: 518 | [Hex]: 0x6200 - 0x6 | [mem]: 0x62       
+# ! [Result]      : load vx kk, x: 0 kk: 0
+
+[pc]: 520 | [Hex]: 0x6000 - 0x6 | [mem]: 0x60       
+# ! [Result]      : load vx kk, x: 0 kk: 0
+
+[pc]: 522 | [Hex]: 0xa2b0 - 0xa | [mem]: 0xa2       
+# ! [Result]      : load i [688] = nnn: [688]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [254, 254, 254, 254, 254, 254, 254] | px: 1 py: 2 | n: 7 | addr: 688
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 0
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 24 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 26 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 1 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 0
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 1
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 32 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 34 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 2 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 2
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 2
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 40 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 42 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 3 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 4
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 3
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 48 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 50 kk: 1
+
+[pc]: 538 | [Hex]: 0x3130 - 0x3 | [mem]: 0x12       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 540 | [Hex]: 0x6110 - 0x6 | [mem]: 0x61       
+# ! [Result]      : load vx kk, x: 16 kk: 16
+
+[pc]: 542 | [Hex]: 0x7208 - 0x7 | [mem]: 0x72       
+# ! [Result]      : add vx: 8 kk: 1
+
+[pc]: 544 | [Hex]: 0x6a12 - 0x6 | [mem]: 0x6a       
+# ! [Result]      : load vx kk, x: 18 kk: 18
+
+[pc]: 546 | [Hex]: 0x7b08 - 0x7 | [mem]: 0x7b       
+# ! [Result]      : add vx: 9 kk: 1
+
+[pc]: 548 | [Hex]: 0xa300 - 0xa | [mem]: 0xa3       
+# ! [Result]      : load i [768] = nnn: [768]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 4 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 771
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 4
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 24 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 26 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 5 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 8
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 5
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 32 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 34 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 6 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 10
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 6
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 40 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 42 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 7 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 12
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 7
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 48 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 50 kk: 1
+
+[pc]: 538 | [Hex]: 0x3130 - 0x3 | [mem]: 0x12       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 540 | [Hex]: 0x6110 - 0x6 | [mem]: 0x61       
+# ! [Result]      : load vx kk, x: 16 kk: 16
+
+[pc]: 542 | [Hex]: 0x7208 - 0x7 | [mem]: 0x72       
+# ! [Result]      : add vx: 16 kk: 1
+
+[pc]: 544 | [Hex]: 0x6a12 - 0x6 | [mem]: 0x6a       
+# ! [Result]      : load vx kk, x: 18 kk: 18
+
+[pc]: 546 | [Hex]: 0x7b08 - 0x7 | [mem]: 0x7b       
+# ! [Result]      : add vx: 17 kk: 1
+
+[pc]: 548 | [Hex]: 0xa300 - 0xa | [mem]: 0xa3       
+# ! [Result]      : load i [768] = nnn: [768]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 8 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 775
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 8
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 24 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 26 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 9 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 16
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 9
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 32 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 34 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 10 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 18
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 10
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 40 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 42 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 11 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 20
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 11
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 48 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 50 kk: 1
+
+[pc]: 538 | [Hex]: 0x3130 - 0x3 | [mem]: 0x12       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 540 | [Hex]: 0x6110 - 0x6 | [mem]: 0x61       
+# ! [Result]      : load vx kk, x: 16 kk: 16
+
+[pc]: 542 | [Hex]: 0x7208 - 0x7 | [mem]: 0x72       
+# ! [Result]      : add vx: 24 kk: 1
+
+[pc]: 544 | [Hex]: 0x6a12 - 0x6 | [mem]: 0x6a       
+# ! [Result]      : load vx kk, x: 18 kk: 18
+
+[pc]: 546 | [Hex]: 0x7b08 - 0x7 | [mem]: 0x7b       
+# ! [Result]      : add vx: 25 kk: 1
+
+[pc]: 548 | [Hex]: 0xa300 - 0xa | [mem]: 0xa3       
+# ! [Result]      : load i [768] = nnn: [768]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 12 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 779
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 12
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 24 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 26 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 13 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 24
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 13
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 32 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 34 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 14 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 26
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 14
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 40 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 42 kk: 1
+
+[pc]: 536 | [Hex]: 0x3130 - 0x3 | [mem]: 0x31       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 548 | [Hex]: 0x1224 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x224] current pc: [548]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 15 kk: 1
+
+[pc]: 556 | [Hex]: 0x3010 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 522 | [Hex]: 0x120a - 0x1 | [mem]: 0xa2       
+# ! [Result]      : Jump to address: [0x20a] current pc: [522]
+
+[pc]: 524 | [Hex]: 0xd127 - 0xd | [mem]: 0xd1       
+# ! [Result]      : sprite [0, 0, 0, 0, 0, 0, 0] | px: 1 py: 2 | n: 7 | addr: 28
+
+[pc]: 528 | [Hex]: 0xf029 - 0xf | [mem]: 0x30       
+# ! [Result]      : None
+
+[pc]: 530 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 15
+
+[pc]: 532 | [Hex]: 0x7108 - 0x7 | [mem]: 0x71       
+# ! [Result]      : add vx: 48 kk: 1
+
+[pc]: 534 | [Hex]: 0x7a08 - 0x7 | [mem]: 0x7a       
+# ! [Result]      : add vx: 50 kk: 1
+
+[pc]: 538 | [Hex]: 0x3130 - 0x3 | [mem]: 0x12       
+# ! [Result]      : skip equal x: [1] == kk: [48]
+
+[pc]: 540 | [Hex]: 0x6110 - 0x6 | [mem]: 0x61       
+# ! [Result]      : load vx kk, x: 16 kk: 16
+
+[pc]: 542 | [Hex]: 0x7208 - 0x7 | [mem]: 0x72       
+# ! [Result]      : add vx: 32 kk: 1
+
+[pc]: 544 | [Hex]: 0x6a12 - 0x6 | [mem]: 0x6a       
+# ! [Result]      : load vx kk, x: 18 kk: 18
+
+[pc]: 546 | [Hex]: 0x7b08 - 0x7 | [mem]: 0x7b       
+# ! [Result]      : add vx: 33 kk: 1
+
+[pc]: 548 | [Hex]: 0xa300 - 0xa | [mem]: 0xa3       
+# ! [Result]      : load i [768] = nnn: [768]
+
+[pc]: 552 | [Hex]: 0xf01e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 554 | [Hex]: 0x7001 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 16 kk: 1
+
+[pc]: 558 | [Hex]: 0x3010 - 0x3 | [mem]: 0x12       
+# ! [Result]      : skip equal x: [0] == kk: [16]
+
+[pc]: 560 | [Hex]: 0x6a12 - 0x6 | [mem]: 0x6a       
+# ! [Result]      : load vx kk, x: 18 kk: 18
+
+[pc]: 562 | [Hex]: 0x6b01 - 0x6 | [mem]: 0x6b       
+# ! [Result]      : load vx kk, x: 1 kk: 1
+
+[pc]: 564 | [Hex]: 0x6c00 - 0x6 | [mem]: 0x6c       
+# ! [Result]      : load vx kk, x: 0 kk: 0
+
+[pc]: 566 | [Hex]: 0x62ff - 0x6 | [mem]: 0x62       
+# ! [Result]      : load vx kk, x: 255 kk: 255
+
+[pc]: 568 | [Hex]: 0xc006 - 0xc | [mem]: 0xc0       
+# ! [Result]      : rnd
+
+[pc]: 570 | [Hex]: 0x7002 - 0x7 | [mem]: 0x70       
+# ! [Result]      : add vx: 8 kk: 1
+
+[pc]: 594 | [Hex]: 0x2252 - 0x2 | [mem]: 0x84       
+# ! [Result]      : current pc: [594] sp current: [1] [stack]: 572
+
+[pc]: 596 | [Hex]: 0x85b0 - 0x8 | [mem]: 0x85       
+# ! [Result]      : None
+
+[pc]: 598 | [Hex]: 0x86c0 - 0x8 | [mem]: 0x86       
+# ! [Result]      : None
+
+[pc]: 600 | [Hex]: 0x3002 - 0x3 | [mem]: 0x30       
+# ! [Result]      : skip equal x: [0] == kk: [2]
+
+[pc]: 612 | [Hex]: 0x1264 - 0x1 | [mem]: 0x30       
+# ! [Result]      : Jump to address: [0x264] current pc: [612]
+
+[pc]: 624 | [Hex]: 0x1270 - 0x1 | [mem]: 0x30       
+# ! [Result]      : Jump to address: [0x270] current pc: [624]
+
+[pc]: 636 | [Hex]: 0x127c - 0x1 | [mem]: 0x30       
+# ! [Result]      : Jump to address: [0x27c] current pc: [636]
+
+[pc]: 648 | [Hex]: 0x1288 - 0x1 | [mem]: 0xa3       
+# ! [Result]      : Jump to address: [0x288] current pc: [648]
+
+[pc]: 652 | [Hex]: 0xf61e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 654 | [Hex]: 0x8100 - 0x8 | [mem]: 0x81       
+# ! [Result]      : None
+
+[pc]: 656 | [Hex]: 0x6000 - 0x6 | [mem]: 0x60       
+# ! [Result]      : load vx kk, x: 0 kk: 0
+
+[pc]: 658 | [Hex]: 0xa300 - 0xa | [mem]: 0xa3       
+# ! [Result]      : load i [768] = nnn: [768]
+
+[pc]: 662 | [Hex]: 0xf61e - 0xf | [mem]: 0xf0       
+# ! [Result]      : None
+
+[pc]: 664 | [Hex]: 0xa300 - 0xa | [mem]: 0xa3       
+# ! [Result]      : load i [768] = nnn: [768]
+
+[pc]: 668 | [Hex]: 0xfc1e - 0xf | [mem]: 0x80       
+# ! [Result]      : None
+
+[pc]: 672 | [Hex]: 0xf055 - 0xf | [mem]: 0xf1       
+# ! [Result]      : None
+
+[pc]: 674 | [Hex]: 0xd455 - 0xd | [mem]: 0xd4       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 4 py: 5 | n: 5 | addr: 1
+
+[pc]: 676 | [Hex]: 0xdab5 - 0xd | [mem]: 0xda       
+# ! [Result]      : sprite [0, 0, 0, 0, 0] | px: 10 py: 11 | n: 5 | addr: 1
+
+[pc]: 678 | [Hex]: 0x8a40 - 0x8 | [mem]: 0x8a       
+# ! [Result]      : None
+
+[pc]: 680 | [Hex]: 0x8b50 - 0x8 | [mem]: 0x8b       
+# ! [Result]      : None
+
+[pc]: 682 | [Hex]: 0x8c60 - 0x8 | [mem]: 0x8c       
+# ! [Result]      : None
+
+[pc]: 0 | [Hex]: 0xee - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZB 238
+
+[pc]: 2 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 4 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 6 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 8 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 10 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 12 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 14 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 16 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 18 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 20 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 22 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 24 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 26 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 28 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 30 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 32 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 34 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 36 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 38 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 40 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 42 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 44 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 46 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 48 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 50 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 52 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 54 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 56 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 58 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 60 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 62 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 64 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 66 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 68 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 70 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 72 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 74 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 76 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 78 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 80 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 82 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 84 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 86 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 88 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 90 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 92 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 94 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 96 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 98 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 100 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 102 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 104 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 106 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 108 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 110 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 112 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 114 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 116 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 118 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 120 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 122 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 124 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 126 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 128 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 130 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 132 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 134 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 136 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 138 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 140 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 142 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 144 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 146 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 148 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 150 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 152 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 154 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 156 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 158 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 160 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 162 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 164 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 166 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 168 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 170 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 172 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 174 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 176 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 178 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 180 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 182 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 184 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 186 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 188 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 190 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 192 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 194 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 196 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 198 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 200 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 202 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 204 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 206 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 208 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 210 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 212 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 214 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 216 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 218 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 220 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 222 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 224 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 226 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 228 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 230 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 232 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 234 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 236 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 238 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 240 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 242 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 244 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 246 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 248 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 250 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 252 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 254 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 256 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 258 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 260 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 262 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 264 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 266 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 268 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 270 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 272 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 274 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 276 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH
+
+[pc]: 278 | [Hex]: 0x0 - 0x0 | [mem]: 0x0       
+# ! [Result]      : ZERO BRANCH

@@ -6,14 +6,20 @@ class Utils:
     # * OPCODES MANIPULATION FUNCS
 
     # ? Used to manimulate opcodes with specific structure and extract data
-    def OPCODE_NNN (opcode)  :  return opcode & 0xFFF         # ? Extracts 12 bits more lower of the opcode (NNN)
-    def OPCODE_KK  (opcode)  :  return opcode & 0xFF          # ? Extracts 8 bits more lower of the opcode (KK)
-    def OPCODE_N   (opcode)  :  return opcode & 0xF           # ? Extracts 4 bits more lower of the opcode (N)
-    def OPCODE_P   (opcode)  :  return opcode >> 12           # ? Extracts 4 bits correspondent of register X of the opcode. Do desplacement of 12 bits right and after applys mask ti to obtain 4 bits more important bits and return the result
-    def OPCODE_X   (opcode)  :  return (opcode >> 8) & 0xF    # ? Extracts 4 bits correspondent of register X of the opcode. Do desplacement of 8 bits right and after applys mask ti to obtain 4 bits more important bits and return the result
-    def OPCODE_Y   (opcode)  :  return (opcode >> 4) & 0xF    # ? Extracts 4 bits correspondent of register X of the opcode. Do desplacement of 4 bits right and after applys mask ti to obtain 4 bits less important bits and return the result
-
-    def nothing(anything): print("NOTHING: ", anything)
+    @staticmethod
+    def OPCODE_NNN (opcode) -> int :  return opcode & 0x0FFF         # ? Extracts 12 bits more lower of the opcode (NNN)
+    @staticmethod
+    def OPCODE_KK  (opcode) -> int :  return opcode & 0xFF          # ? Extracts 8 bits more lower of the opcode (KK)
+    @staticmethod
+    def OPCODE_N   (opcode) -> int :  return opcode & 0xF           # ? Extracts 4 bits more lower of the opcode (N)
+    @staticmethod
+    def OPCODE_P   (opcode) -> int :  return opcode >> 12           # ? Extracts 4 bits correspondent of register X of the opcode. Do desplacement of 12 bits right and after applys mask ti to obtain 4 bits more important bits and return the result
+    @staticmethod
+    def OPCODE_X   (opcode) -> int :  return (opcode >> 8) & 0xF    # ? Extracts 4 bits correspondent of register X of the opcode. Do desplacement of 8 bits right and after applys mask ti to obtain 4 bits more important bits and return the result
+    @staticmethod
+    def OPCODE_Y   (opcode) -> int :  return (opcode >> 4) & 0xF    # ? Extracts 4 bits correspondent of register X of the opcode. Do desplacement of 4 bits right and after applys mask ti to obtain 4 bits less important bits and return the result  
+    @staticmethod
+    def pc_next (mac) -> None: mac.pc = (mac.pc + 2) & 0xfff
 
 OPCODE_NNN = Utils.OPCODE_NNN
 OPCODE_KK = Utils.OPCODE_KK
@@ -21,11 +27,16 @@ OPCODE_N = Utils.OPCODE_N
 OPCODE_P = Utils.OPCODE_P
 OPCODE_X = Utils.OPCODE_X
 OPCODE_Y = Utils.OPCODE_Y
+pc_next = Utils.pc_next
 
 class Opcodes:
 
-    def memset (buffer, value: int, size):
-        """[ Set ] in [ buffer ] for [ size ]
+    @staticmethod
+    def nothing(anything): print("NOTHING: ", anything) 
+
+    @staticmethod
+    def memset (buffer, value: int, size) -> None:
+        """Set [ value ] in [ buffer ] for [ size ]
 
         Args:
             buffer (_type_): _description_
@@ -35,6 +46,39 @@ class Opcodes:
         for i in range(size):
             buffer[i] = value
 
+    @staticmethod
+    def zero_branch (mac, opcode) -> str:
+        """Contains 0x0 init opcodes
+
+        Args:
+            opcode (hex): _description_
+
+        Returns:
+            str: _description_
+        """
+        match opcode:
+            case 0x0:
+                pc_next(mac)
+                return f"0x0NNN {opcode}"
+
+            case 0x00E0:
+                for i in range(len(mac.screen.pixel_array)):
+                    for j in range(len(mac.screen.pixel_array[i])):
+                        mac.screen.pixel_array[i][j] = 0
+                
+                pc_next(mac)
+                return f"CLS {opcode}"
+            
+            case 0x00EE:
+                mac.sp -= 1
+                mac.pc = mac.stack[mac.sp]
+                pc_next(mac)
+                    
+                return f"ZB {opcode}"
+
+        return f"ZERO BRANCH"
+
+    @staticmethod
     def jump_to_address (mac, opcode) -> str:
         """Función para JP nnn: set program counter to nnn
 
@@ -47,8 +91,26 @@ class Opcodes:
         mac.pc = OPCODE_NNN(opcode)
         return f"Jump to address: [{hex(OPCODE_NNN(opcode))}] current pc: [{mac.pc}]"
 
+    @staticmethod
+    def call (mac, opcode) -> str:
+        """2NNN Call nnn, stack[sp++] = pc, pc =nnn
+
+        Args:
+            opcode (hex): _description_
+
+        Returns:
+            str: _description_
+        """
+        if mac.sp < 15:
+            mac.sp += 1
+            mac.stack[mac.sp] = mac.pc
+            mac.pc = OPCODE_NNN(opcode)
+
+        return f"Current pc: [{mac.pc}] sp current: [{mac.sp}] [stack]: {mac.stack[mac.sp]}"
+
+    @staticmethod
     def skip_equal (mac, opcode) -> str:
-        """Función para SE (skip equal) x, kk: if V[x] == kk -> pc+=2
+        """The interpreter compares register Vx to kk, and if they are equal, increments the program counter by 2.
 
         Args:
             opcode (_type_): _description_
@@ -57,12 +119,14 @@ class Opcodes:
             str: _description_
         """
         if mac.v[OPCODE_X(opcode)] == OPCODE_KK(opcode):
-            mac.pc = (mac.pc + 2) & 0xfff
+            pc_next(mac)
+        pc_next(mac)
         return f"skip equal x: [{OPCODE_X(opcode)}] == kk: [{OPCODE_KK(opcode)}]"
 
+    @staticmethod
     def skip_not_equal (mac, opcode) -> str:
-        """Función para SNE (skip not equal) x, kk if V[x] != kk -> pc+=2
-
+        """The interpreter compares register Vx to kk, and if they are not equal, increments the program counter by 2.
+        
         Args:
             opcode (hex): _description_
 
@@ -70,14 +134,15 @@ class Opcodes:
             str: _description_
         """
         if mac.v[OPCODE_X(opcode)] != OPCODE_KK(opcode):
-            mac.pc = (mac.pc + 2) & 0xfff
+            pc_next(mac)
             
             return f"load vx kk, x: {mac.v[OPCODE_X(opcode)]} kk: {OPCODE_KK(opcode)}"
-        else:
-            return f"Error: load vx kk, x: {mac.v[OPCODE_X(opcode)]} kk: {OPCODE_KK(opcode)}"
 
+        pc_next(mac)
+        
+    @staticmethod
     def skip_equal_vx_vy (mac, opcode) -> str:
-        """Función para SE x, y: V[x]==V[y] -> pc +=2
+        """Skip next instruction if Vx = Vy.
 
         Args:
             opcode (_type_): _description_
@@ -86,11 +151,13 @@ class Opcodes:
             str: _description_
         """
         if mac.v[OPCODE_X(opcode)] == mac.v[OPCODE_Y(opcode)]:
-            mac.pc = (mac.pc + 2) & 0xfff
+            pc_next(mac)
+        pc_next(mac)
         return f"skip equal vx: {mac.v[OPCODE_X(opcode)]} == vy: {mac.v[OPCODE_Y(opcode)]} "
 
+    @staticmethod
     def load_vx_kk (mac, opcode) -> str:
-        """Función para LD x, kk: V[x] = kk
+        """The interpreter puts the value kk into register Vx.
 
         Args:
             opcode (hex): _description_
@@ -99,9 +166,10 @@ class Opcodes:
             str: _description_
         """
         mac.v[OPCODE_X(opcode)] = OPCODE_KK(opcode)
-        
+        pc_next(mac)
         return f"load vx kk, x: {mac.v[OPCODE_X(opcode)]} kk: {OPCODE_KK(opcode)}"
 
+    @staticmethod
     def add_vx_kk (mac, opcode) -> str:
         """Función para ADD x, kk: V[x] = V[x] + kk
 
@@ -112,33 +180,10 @@ class Opcodes:
             str: _description_
         """
         mac.v[OPCODE_X(opcode)] = (mac.v[OPCODE_X(opcode)] + OPCODE_KK(opcode)) & 0xFF
+        pc_next(mac)
         return f"add vx: {mac.v[OPCODE_X(opcode)]} kk: {1}"
 
-    def skip_not_equal_vx_vy (mac, opcode) -> str:
-        """Función para SNE x, y: V[x] != V[y]
-
-        Args:
-            opcode (hex): _description_
-
-        Returns:
-            str: _description_
-        """
-        if mac.v[OPCODE_X(opcode)] != mac.v[OPCODE_Y(opcode)]:
-            mac.pc = (mac.pc + 2) & 0xFFFF
-        return f"skip_not_equal vx: {mac.v[OPCODE_X(opcode)]} != vy: {OPCODE_Y(opcode)} "
-
-    def load_i (mac, opcode) -> str:
-        """Función para LD i, x: I = nnn 
-
-        Args:
-            opcode (hex): _description_
-
-        Returns:
-            str: _description_
-        """
-        mac.i = OPCODE_NNN(opcode)
-        return f"load i [{mac.i}] = nnn: [{OPCODE_NNN(opcode)}]"
-
+    @staticmethod
     def load_i_v0_nnn (mac, opcode) -> str:
         """Función para JP V0, nnn: pc = V[0] + nnn
 
@@ -149,8 +194,104 @@ class Opcodes:
             str: _description_
         """
         mac.pc = (mac.v[0] + OPCODE_NNN(opcode)) & 0xFFF
+        
         return f"load i pc: [{mac.pc}] = v[0]: {mac.v[0]} + nnn: [{OPCODE_NNN(opcode)}]"
 
+    @staticmethod
+    def arithmetic_operator (mac, opcode) -> str:
+        """_summary_
+
+        Args:
+            mac (_type_): _description_
+            opcode (hex): _description_
+
+        Returns:
+            str: _description_
+        """
+        x = OPCODE_X(opcode)
+        y = OPCODE_Y(opcode)
+
+        match OPCODE_N (opcode):
+
+            # 8XY0 LD: set V[x] = V[y]
+            case 0: mac.v[x] = mac.v[y]; pc_next(mac)
+
+            # 8XY1: OR: set V[x] |= V[y]
+            case 1: mac.v[x] |= mac.v[y]; pc_next(mac)
+
+            # 8XY1: AND: set V[x] &= V[y]
+            case 2: mac.v[x] &= mac.v[y]; pc_next(mac)
+
+            # 8XY3: XOR: set V[x] ^= V[y]
+            case 3: mac.v[x] ^= mac.v[y]; pc_next(mac)
+
+            # 8XY4: ADD: set V[x] += V[y] v[15] carry flag
+            case 4: 
+                r = mac.v[x] + mac.v[y]
+                mac.v[x] = r & 0xFF
+                mac.v[15] = int(r > 0xFF)
+                pc_next(mac)
+                return f"8XY4 carry flag: {int(r > 0xFF)}"
+
+            # 8XY5: Set Vx = Vx - Vy, set VF = NOT borrow.
+            case 5:
+                mac.v[15] = int(mac.v[x] > mac.v[y])
+                mac.v[x] = mac.v[x] - mac.v[y]
+                mac.v[x] &= 0xFF  # Para asegurarse de que el resultado esté en el rango de un byte (0x00 - 0xFF)
+                pc_next(mac)
+                return f"8XY5 carry flag: {int(r > 0xFF)}"
+
+            # 8XY6: SHR: shifts right V[x], LSB vit goes to V[15]
+            case 6:
+                mac.v[15] = (mac.v[x] & 1)
+                mac.v[x] >>= mac.v[y]
+                pc_next(mac)
+            # 8XY7: Set Vx = Vy - Vx, set VF = NOT borrow.
+
+            case 7:
+                mac.v[15] = int(mac.v[x] > mac.v[y]!=0)
+                mac.v[x] = mac.v[y] - mac.v[x]
+                pc_next(mac)
+            # 8X0E: SHL: Shifts left V[x], MSB bit goes to V[15]
+            case 0xE:
+                mac.v[15] = ((mac.v[x] & 0x80) != 0)
+                mac.v[x] <<= 1
+                pc_next(mac)
+                return f"0xE carry flag: {((mac.v[x] & 0x80) != 0)}"
+            
+        return "Arithmetic"
+
+    @staticmethod
+    def skip_not_equal_vx_vy (mac, opcode) -> str:
+        """Skip next instruction if Vx != Vy.
+
+        Args:
+            opcode (hex): _description_
+
+        Returns:
+            str: _description_
+        """
+        if mac.v[OPCODE_X(opcode)] != mac.v[OPCODE_Y(opcode)]:
+            pc_next(mac)
+        pc_next(mac)
+
+        return f"skip_not_equal vx: {mac.v[OPCODE_X(opcode)]} != vy: {OPCODE_Y(opcode)} "
+
+    @staticmethod
+    def load_i (mac, opcode) -> str:
+        """Función para LD i, x: I = nnn 
+
+        Args:
+            opcode (hex): _description_
+
+        Returns:
+            str: _description_
+        """
+        mac.i = OPCODE_NNN(opcode)
+        pc_next(mac)
+        return f"load i [{mac.i}] = nnn: [{OPCODE_NNN(opcode)}]"
+
+    @staticmethod
     def c_random (mac, opcode):
         # RND x, kk: v[x] = random() % kk (mascara de bits)
         """_summary_
@@ -161,9 +302,11 @@ class Opcodes:
         Returns:
             str: _description_
         """
-        mac.v[OPCODE_X(opcode)] = random(0,9) & OPCODE_KK(opcode)
+        mac.v[OPCODE_X(opcode)] = random(0,0xFF) & OPCODE_KK(opcode)
+        pc_next(mac)
         return "rnd"
 
+    @staticmethod
     def draw (mac, opcode) -> str:
         """
         DRW: x, y, n
@@ -216,107 +359,41 @@ class Opcodes:
 
         if draw_screen(mac, mac.v[Vx], mac.v[Vy], sprite):
             mac.v[15] = 1
+            pc_next(mac)
             return f"sprite {sprite} | px: {Vx} py: {Vy} | n: {N} | addr: {addr} | collision"            
         else:
             mac.v[15] = 0
+            pc_next(mac)
             return f"sprite {sprite} | px: {Vx} py: {Vy} | n: {N} | addr: {addr}"
 
-    def call (mac, opcode) -> str:
-        """Call nnn, stack[sp++] = pc, pc =nnn
-
-        Args:
-            opcode (hex): _description_
-
-        Returns:
-            str: _description_
-        """
+    @staticmethod
+    def e_branch(mac, opcode) -> str:
+        """Two instructions, EX9E & EXA1
         
-        if mac.sp < 15:
-            mac.sp += 1
-            mac.stack[mac.sp] = mac.pc
-            mac.pc = OPCODE_NNN(opcode)
-            return f"current pc: [{mac.pc}] sp current: [{mac.sp}] [stack]: {mac.stack[mac.sp]}"
-        else: return f"[sp above 16]"
-
-    def zero_branch (mac, opcode) -> str:
-        """_summary_
-
-        Args:
-            opcode (hex): _description_
-
-        Returns:
-            str: _description_
-        """
-        match opcode:
-            case 0x00E0:
-                for i in range(len(mac.screen.pixel_array)):
-                    for j in range(i):
-                        mac.screen.pixel_array[i][j]=0
-                
-                return f"CLS {opcode}"
-            
-            case 0x00EE:
-                mac.sp -= 1
-                mac.pc = mac.stack[mac.sp]
-                mac.pc += 2
-                    
-                return f"ZB {opcode}"
-        return f"ZERO BRANCH"
-
-    def arithmetic_operator (mac, opcode) -> str:
-        """_summary_
-
+        EX9E: Skip next instruction if key with the value of Vx is pressed.
+        
+        EXA1: Skip next instruction if key with the value of Vx is not pressed.
+        
         Args:
             mac (_type_): _description_
-            opcode (hex): _description_
+            opcode (_type_): _description_
 
         Returns:
             str: _description_
         """
-        x = OPCODE_X(opcode)
-        y = OPCODE_Y(opcode)
+        match OPCODE_KK(opcode):
+            
+            # Skip next instruction if key with the value of Vx is pressed.
+            case 0x9E:
+                mac.pc += 2
+            
+            # Skip next instruction if key with the value of Vx is not pressed.
+            case 0xA1:
+                mac.pc += 2
 
-        match OPCODE_N (opcode):
-
-            # 8XY0 LD: set V[x] = V[y]
-            case 0: mac.v[x] = mac.v[y]
-
-            # 8XY1: OR: set V[x] |= V[y]
-            case 1: mac.v[x] |= mac.v[y]
-
-            # 8XY1: AND: set V[x] &= V[y]
-            case 2: mac.v[x] &= mac.v[y]
-
-            # 8XY3: XOR: set V[x] ^= V[y]
-            case 3: mac.v[x] ^= mac.v[y]
-
-            # 8XY4: ADD: set V[x] += V[y] v[15] carry flag
-            case 4: 
-                mac.v[15] = mac.v[x] > ((mac.v[x]+mac.v[y]) & 0xFF)
-                mac.v[x] += mac.v[y]
-
-            # 8XY5: SUB: set v[x] -= V[y] - v[15] is borrow flag
-            case 5:
-                mac.v[15] = (mac.v[x] > mac.v[y]) & 0xFF
-                mac.v[x] -= mac.v[y]
-
-            # 8XY6: SHR: shifts right V[x], LSB vit goes to V[15]
-            case 6:
-                mac.v[15] = (mac.v[x] & 1)
-                mac.v[x] >>= mac.v[y]
-
-            # 8XY7: SUBN: set v[x] -= V[y] - v[16] is borrow flag
-            case 7:
-                mac.v[15] = (mac.v[x] > mac.v[y]!=0) 
-                mac.v[x] = mac.v[y] - mac.v[y]
-
-            # 8X0E: SHL: Shifts left V[x], MSB bit goes to V[15]
-            case 0xE:
-                mac.v[15] = ((mac.v[x] & 0x80) != 0)
-                mac.v[x] <<= 1
-
+    @staticmethod
     def f_branch (mac, opcode) -> str:
-        """_summary_
+        """0xF Init opcodes
 
         Args:
             mac (_type_): _description_
@@ -333,32 +410,36 @@ class Opcodes:
             # LD V[x], DT: V[x] = DT
             case 0x07:
                 mac.v[x] = mac.delay_timer
-                mac.pc += 2
+                pc_next(mac)
                 
             # Wait for a key press, store the value of the key in Vx.
             case 0x0A:
-                mac.pc += 2
-
+                pc_next(mac)
             
             # LD DT, v[x]: DT = v[x]
             case 0x15:
                 mac.delay_timer = mac.v[x]
-                mac.pc += 2
+                pc_next(mac)
 
             # BEEP!, LD ST, v[x] -> ST = v[x]
             case 0x18:
                 mac.stack = mac.v[x]
-                mac.pc += 2
-                
+                pc_next(mac)
+
             # ADD i, v: i += v[x]
             case 0x1E:
-                mac.i += mac.v[x]
-                mac.pc += 2
+                s = mac.i + mac.v[x];
+                if s > 0xFFF:
+                    mac.v[0xF] = 1
+                else:
+                    mac.v[0xF] = 0;
+                mac.i += mac.v[x];
+                pc_next(mac)
                 
             # LD F, Set I = location of sprite for digit Vx.
             case 0x29:
-                mac.i = mac.v[x]
-                mac.pc += 2
+                mac.i = 0x50 + (mac.v[x] & 0xF) * 5
+                pc_next(mac)
                 
             # LD B, Vx, Store BCD representation of Vx in memory locations I, I+1, and I+2.
             case 0x33:
@@ -366,29 +447,26 @@ class Opcodes:
                 
                 ones = (val%10)
                 tens = (val//10)%10
-                hundreds = (val//100)%10
+                hundreds = (val//100)
                 
-                mac.memory[mac.i] = hundreds
-                mac.memory[mac.i + 1] = tens
-                mac.memory[mac.i + 2] = ones
+                mac.memory[mac.i]     = mac.v[hundreds]
+                mac.memory[mac.i + 1] = mac.v[tens]
+                mac.memory[mac.i + 2] = mac.v[ones]
 
-                mac.pc += 2
+                pc_next(mac)
                 return f"i {mac.memory[mac.i]} 0 i+1| {mac.memory[mac.i+1]} |i+2 {mac.memory[mac.i+2]}"
 
             # LD [i] Vx, Store registers V0 through Vx in memory starting at location I.
             case 0x55:
                 for i in range(x+1):
-                    mac.memory[mac.i + i] = mac.v[i]
-
-                mac.i = i + x + 1
-                mac.pc += 2
-
-            
+                    mac.memory[(mac.i + i)&0xFFF] = mac.v[i]
+                pc_next(mac)
             # Fx65 - LD Vx, [I] Read registers V0 through Vx from memory starting at location I.
             # The interpreter reads values from memory starting at location I into registers V0 through Vx.
             case 0x65:
-                for i in range(x):
-                    mac.v[i] = mac.memory[mac.i+i]
-
-                mac.i = mac.i + x + 1
-                mac.pc += 2
+                for i in range(x+1):
+                    mac.v[i] = mac.memory[mac.i+i & 0xFFF]
+                pc_next(mac)
+                #mac.i = mac.i + x + 1
+                #mac.pc += 2
+        return f"f_branch"

@@ -5,8 +5,7 @@ import cProfile
 if __name__=="__main__":
     
     # * Rom to execute
-    # LETTERS-TEST
-    rom = r"E:\Proyectos\Chip-8\src\roms\TICTAC"
+    rom = r"D:\Proyectos\Chip-8\src\roms\LETTERS-TEST"
     
     # * Instancing chip8
     chip8 = Chip8()

@@ -19,50 +19,48 @@
     * ------------------------------------------------------------------------- *
 """
 
-# * IMPORTS
-
+# IMPORTS
 from Opcodes import Opcodes as Opc, Utils
 from random import randint as random
 from Screen import Screen
 import pygame
 import sys
 
-OPCODE_NNN = Utils.OPCODE_NNN
-OPCODE_KK = Utils.OPCODE_KK
-OPCODE_N = Utils.OPCODE_N
-OPCODE_P = Utils.OPCODE_P
-OPCODE_X = Utils.OPCODE_X
-OPCODE_Y = Utils.OPCODE_Y
+# Manipulation
+OPCODE_NNN  = Utils.OPCODE_NNN
+OPCODE_KK   = Utils.OPCODE_KK
+OPCODE_N    = Utils.OPCODE_N
+OPCODE_P    = Utils.OPCODE_P
+OPCODE_X    = Utils.OPCODE_X
+OPCODE_Y    = Utils.OPCODE_Y
+memset      = Opc.memset
 
-memset = Opc.memset
-
-
-# ? Classes
+# Classes
 class Chip8:
     
     def __init__(self) -> None:
 
-                # * Cpu
-        self.pc = 0  # Change to a regular integer
+        # * Cpu
+        self.pc = 0                                      # Change to a regular integer
 
         # * Memory
-        self.MEM_SIZE = 4096  # How much mem can handle the chip
-        self.memory = [0] * self.MEM_SIZE  # Mem as buffer
+        self.MEM_SIZE = 4096                             # How much mem can handle the chip
+        self.memory = [0] * self.MEM_SIZE                # Mem as buffer
 
         # * Registers22
-        self.v = [0] * 16  # 16 General purpose registers
-        self.i = 0  # Special register
+        self.v = [0] * 16                                # 16 General purpose registers
+        self.i = 0                                       # Special register
 
         # * Stack
-        self.stack = [0] * 16  # Stack can hold 16 - 16 bits
-        self.sp = 0  # Stack pointer
+        self.stack = [0] * 16                            # Stack can hold 16 - 16 bits
+        self.sp = 0                                      # Stack pointer
 
         # * Timers
         self.delay_timer = 0
         self.sound_timer = 0
 
         # * External
-        self.screen = Screen  # Assuming Screen is a class
+        self.screen = Screen                             # Assuming Screen is a class
         self.clock = pygame.time.Clock()
         
         # * Fuentes
@@ -133,7 +131,7 @@ class Chip8:
             0xD: Opc.draw,
 
             # SKP / SKNP
-            0xE: Opc.skip_not_equal,
+            0xE: Opc.e_branch,
 
             # Franch
             0xF: Opc.f_branch,
@@ -146,7 +144,7 @@ class Chip8:
 
     def exec_step (self) -> None:
 
-        if self.pc < len(self.memory) - 1:
+        if self.pc < len(self.memory):
             opcode = (self.memory[self.pc] << 8) | self.memory[self.pc + 1]
 
             b = opcode & 0xF000
@@ -162,14 +160,11 @@ class Chip8:
             self.pc = 0x200
             return "Error: Program counter out of bounds."
 
-    def load (self, rom_path) -> int:
-        """_summary_
+    def load (self, rom_path) -> None:
+        """Charge rom by rom file path
 
         Args:
             rom_path (_type_): _description_
-
-        Returns:
-            int: _description_
         """
         debug_txt = ""
 
@@ -189,7 +184,7 @@ class Chip8:
             str: _description_
         """
         r = self.exec_step()
-        self.pc = (self.pc + 2) & 0xffff
+        #self.pc = (self.pc + 2) & 0xFFF
         return r
     
     def upd_inpt(self) -> bool:
@@ -205,7 +200,7 @@ class Chip8:
         return True
     
     def loop(self) -> None:
-        """_summary_
+        """The loop of the chip
         """
         
         #with open("D:\Proyectos\Chip-8\src\debug\debug2.txt", 'w') as f:
@@ -225,18 +220,18 @@ class Chip8:
         while running:
             
             running = upd_inpt()
-                    
+            
             debug_txt += "\n"+ upd_logic()
 
             self.screen.update()
             
-            self.clock.tick(60)
+            self.clock.tick(1000)
         
         else:
         
             print("terminated")
             
-            with open(r"E:\Proyectos\Chip-8\src\debug\debug.txt","w") as f:
+            with open(r"D:\Proyectos\Chip-8\src\debug\debug.txt","w") as f:
                 f.write(debug_txt)
             
             pygame.quit()
